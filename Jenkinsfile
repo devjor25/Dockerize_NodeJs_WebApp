@@ -4,22 +4,26 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/devjor25/Dockerize_NodeJs_WebApp.git'
+                checkout scm
+                echo 'Hello checkout'
             }
         }
         stage('Install Dependencies') {
             steps {
                 sh 'npm install'
+                echo 'Hello install'
             }
         }
         stage('Build') {
             steps {
                 sh 'npm run build'
+                echo 'Hello build'
             }
         }
         stage('Test') {
             steps {
                 sh 'npm test'
+                echo 'Hello test'
             }
         }
     }
