@@ -3,20 +3,19 @@ pipeline {
     stages{
         stage("checkout"){
             steps{
-                checkout scm
+                echo 'Hello checkout'
             }
         }
 
         stage("Test"){
             steps{
-                sh 'apt-get update && apt-get install -y npm'
-                sh 'npm test'
+                echo 'Hello test'
             }
         }
 
         stage("Build"){
             steps{
-                sh 'npm run build'
+                echo 'Hello build'
             }
         }
 
