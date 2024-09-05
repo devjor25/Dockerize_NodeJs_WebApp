@@ -1,26 +1,26 @@
 pipeline {
     agent any
-    stages{
-        stage("checkout"){
-            steps{
-                echo 'Hello checkout'
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/devjor25/Dockerize_NodeJs_WebApp.git'
             }
         }
-
-        stage("Test"){
-            steps{
-                echo 'Hello test'
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm install'
             }
         }
-
-        stage("Build"){
-            steps{
+        stage('Build') {
+            steps {
                 sh 'npm run build'
-                echo 'Hello build success'
             }
         }
-
-
-       
+        stage('Test') {
+            steps {
+                sh 'npm test'
+            }
+        }
     }
 }
