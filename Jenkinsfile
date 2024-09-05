@@ -20,11 +20,7 @@ pipeline {
             }
         }
 
-        stage("Build Image"){
-            steps{
-                sh 'docker build -t Dockerize_NodeJs_WebApp:1.0 .'
-            }
-        }
+
        
     }
 }
