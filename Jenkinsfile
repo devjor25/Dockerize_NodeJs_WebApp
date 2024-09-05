@@ -15,12 +15,12 @@ pipeline {
             }
         }
         
-        stage('Test') {
+        stage('Start') {
             steps {
-                sh 'npm test'
-                echo 'Hello test'
+                sh 'npm start'
+                echo 'Hello start'
             }
         }
-        
+
     }
 }
